@@ -19,3 +19,13 @@ Content-Type: application/x-www-form-urlencoded; charset=utf-8
 Request Body:
 message=hello world&channel=random
 ```
+
+### Mail
+
+```
+HTTP POST
+URL: /send/mail
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Request Body:
+subject=hello&message=world&to=some@mail.com
+```
