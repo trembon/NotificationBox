@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
-using NotificationBox.Messages;
+using NotificationBox.Handlers;
 using System;
 using System.Collections.Generic;
 using System.Linq;

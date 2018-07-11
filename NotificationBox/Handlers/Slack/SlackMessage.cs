@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NotificationBox.Messages
+namespace NotificationBox.Handlers.Slack
 {
     public class SlackMessage : IMessage
     {

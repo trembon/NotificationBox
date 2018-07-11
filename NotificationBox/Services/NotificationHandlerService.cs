@@ -1,5 +1,4 @@
 ﻿using NotificationBox.Handlers;
-using NotificationBox.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;

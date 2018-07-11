@@ -1,11 +1,8 @@
-﻿using NotificationBox.Messages;
-using NotificationBox.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Threading.Tasks;
+using SlackAPI = Slack.Webhooks;
 
-namespace NotificationBox.Handlers
+namespace NotificationBox.Handlers.Slack
 {
     public class SlackNotificationHandler : BaseNotificationHandler, INotificationHandler<SlackMessage>
     {
@@ -18,19 +15,19 @@ namespace NotificationBox.Handlers
         {
             try
             {
-                Slack.Webhooks.SlackMessage slackMessage = new Slack.Webhooks.SlackMessage
+                SlackAPI.SlackMessage slackMessage = new SlackAPI.SlackMessage
                 {
                     Username = message.Username,
                     Channel = message.Channel,
                     Text = message.Message
                 };
 
-                if (string.IsNullOrWhiteSpace(message.Emoji) && Enum.TryParse(message.Emoji, out Slack.Webhooks.Emoji emoji))
+                if (string.IsNullOrWhiteSpace(message.Emoji) && Enum.TryParse(message.Emoji, out SlackAPI.Emoji emoji))
                 {
                     slackMessage.IconEmoji = emoji;
                 }
 
-                Slack.Webhooks.SlackClient slackClient = new Slack.Webhooks.SlackClient(message.WebHookURL);
+                SlackAPI.SlackClient slackClient = new SlackAPI.SlackClient(message.WebHookURL);
                 bool sendResult = await slackClient.PostAsync(slackMessage);
 
                 return new Tuple<bool, string>(sendResult, null);

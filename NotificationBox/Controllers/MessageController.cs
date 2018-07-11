@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using NotificationBox.Handlers;
-using NotificationBox.Messages;
 using NotificationBox.Models;
 using NotificationBox.Services;
 
