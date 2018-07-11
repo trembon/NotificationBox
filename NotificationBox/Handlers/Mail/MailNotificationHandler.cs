@@ -22,7 +22,7 @@ namespace NotificationBox.Handlers.Mail
                     using (System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage(message.From, message.To))
                     {
                         mail.Subject = message.Subject;
-                        mail.IsBodyHtml = message.HTML;
+                        mail.IsBodyHtml = message.IsHTML;
                         mail.Body = message.Message;
 
                         await smtp.SendMailAsync(mail);
