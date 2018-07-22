@@ -22,7 +22,7 @@ namespace NotificationBox.Handlers.Slack
                     Text = message.Message
                 };
 
-                if (string.IsNullOrWhiteSpace(message.Emoji) && Enum.TryParse(message.Emoji, out SlackAPI.Emoji emoji))
+                if (!string.IsNullOrWhiteSpace(message.Emoji) && Enum.TryParse(message.Emoji, out SlackAPI.Emoji emoji))
                 {
                     slackMessage.IconEmoji = emoji;
                 }
